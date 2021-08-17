@@ -40,6 +40,10 @@ class Plane:
         self.capacity = capacity
         self.range = range
 
+    def check_capacity(self):
+        return self.capacity
 
+    def check_range(self):
+        return self.range
 
 
