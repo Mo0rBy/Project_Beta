@@ -5,28 +5,14 @@ class Passenger:
         self.passport_num = passport_num
         self.flight = None
 
-    def add_flight(self, destination):
-        self.flight = destination
+    def add_flight(self):
+        pass
 
     def get_info(self):
-
         pass
 
     def is_passport_valid(self):
-        if len(str(self.passport_num)) == 9 and isinstance(self.passport_num, int) == True:
-            return True
-        else:
-            return False
-
-        print(self.name, self.passport_num)
-
-    def is_passport_valid(self):
-        if (len(str(self.passport_num)) == 9) and (isinstance(self.passport_num, int) == True):
-            return True
-        else:
-            return False
-        
-
+        pass
 # valid as in is the passport number 9 numbers long, no letters
 
 
@@ -50,14 +36,6 @@ class Plane:
         self.capacity = capacity
         self.range = range
 
-
-
-
-    def check_capacity(self):
-        return self.capacity
-
-    def check_range(self):
-        return self.range
 
 
 
