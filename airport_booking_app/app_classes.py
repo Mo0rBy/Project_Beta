@@ -9,23 +9,29 @@ class Passenger:
     def __init__(self, name, passport_num):
         self.name = name
         self.passport_num = passport_num
-        self.flight = None
+        # self.flight = None
+
 
     def add_flight(self, destination):
         self.flight = destination
         with open(os.path.join(flight_trip_path + "\\" + destination + ".txt"), 'a+') as flight_list:
             flight_list.write(self.name + ", " + str(self.passport_num) + "\n")
 
+    # def add_flight(self, destination):
+    #     self.flight = destination   # This needs to change
+    #     with open(os.path.join(flight_trip_path + "\\" + destination + ".txt"), 'a+') as flight_list:
+    #         flight_list.write(self.name + ", " + str(self.passport_num) + "\n")
+
+
     def get_info(self):
         return self.name, self.passport_num
 
-    def is_passport_valid(self):
+    def is_passport_valid(self): # valid as in is the passport number 9 numbers long, no letters
         if (len(str(self.passport_num)) == 9) and (isinstance(self.passport_num, int) == True):
             return True
         else:
             return False
         
-# valid as in is the passport number 9 numbers long, no letters
 
 
 class FlightTrip:
@@ -39,8 +45,13 @@ class FlightTrip:
 
     def fetch_passenger_list(self):
         with open(os.path.join(flight_trip_path + self.destination + ".txt"), 'r') as flight_list:
+
             return(flight_list) # Duplication detection
 
+            return(flight_list) # Duplication detection ?? ASK
+
+
+    # check if plane is valid - has seating available etc.
     def check_plane(self):
         with open(os.path.join(flight_trip_path + "\\" + self.destination + ".txt"), 'r') as flight_list:
             line_count = 0
@@ -54,7 +65,15 @@ class FlightTrip:
         else:
             print("Please assign a new plane")
             return False
+
 # check if plane is valid - has seating available etc.
+
+
+    def add_Passenger(self, passenger):     # Add destinations to list for each passenger?? ASK (passenger1 = [des1, des2])
+        with open(os.path.join(flight_trip_path + "\\" + self.destination + ".txt"), 'a+') as flight_list:
+            flight_list.write(passenger.name + ", " + str(passenger.passport_num) + "\n")
+
+
 
 
 class Plane:
