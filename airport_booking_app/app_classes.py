@@ -1,3 +1,9 @@
+import os
+
+# Change paths for your directories!!
+parent_dir = os.path.dirname(__file__)
+flight_trip_path = os.path.join(parent_dir + "\\flight_trips")
+
 
 class Passenger:
     def __init__(self, name, passport_num):
@@ -7,9 +13,11 @@ class Passenger:
 
     def add_flight(self, destination):
         self.flight = destination
+        with open(os.path.join(flight_trip_path + "\\" + destination + ".txt"), 'a+') as flight_list:
+            flight_list.write(self.name + ", " + str(self.passport_num) + "\n")
 
     def get_info(self):
-        print(self.name, self.passport_num)
+        return self.name, self.passport_num
 
     def is_passport_valid(self):
         if (len(str(self.passport_num)) == 9) and (isinstance(self.passport_num, int) == True):
@@ -23,15 +31,29 @@ class Passenger:
 class FlightTrip:
     def __init__(self, destination):
         self.destination = destination
+        self.passenger_dict = {}
+        self.plane = None
 
-    def assign_plane(self):
-        pass
+    def assign_plane(self, plane):
+        self.plane = plane
 
-    def generate_passenger_list(self):
-        pass
+    def fetch_passenger_list(self):
+        with open(os.path.join(flight_trip_path + self.destination + ".txt"), 'r') as flight_list:
+            return(flight_list) # Duplication detection
 
     def check_plane(self):
-        pass
+        with open(os.path.join(flight_trip_path + "\\" + self.destination + ".txt"), 'r') as flight_list:
+            line_count = 0
+            for line in flight_list:
+                if line != "\n":
+                    line_count += 1
+        
+        if self.plane.capacity >= line_count:
+            print("The assigned plane is valid")
+            return True
+        else:
+            print("Please assign a new plane")
+            return False
 # check if plane is valid - has seating available etc.
 
 
