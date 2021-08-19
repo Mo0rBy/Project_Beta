@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+Add Passenger
+{% endblock %}
+
+{% block body %}
+<form method="post" action="passenger">
+  <label for="name">name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="passportnum">Passport Number:</label><br>
+  <input type="text" id="passportnum" name="passportnum">
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
