@@ -11,6 +11,11 @@ class Passenger:
         self.passport_num = passport_num
         # self.flight = None
 
+    def add_flight(self, destination):
+        self.flight = destination
+        with open(os.path.join(flight_trip_path + "\\" + destination + ".txt"), 'a+') as flight_list:
+            flight_list.write(self.name + ", " + str(self.passport_num) + "\n")
+
     # def add_flight(self, destination):
     #     self.flight = destination   # This needs to change
     #     with open(os.path.join(flight_trip_path + "\\" + destination + ".txt"), 'a+') as flight_list:
@@ -19,12 +24,11 @@ class Passenger:
     def get_info(self):
         return self.name, self.passport_num
 
-    def is_passport_valid(self): # valid as in is the passport number 9 numbers long, no letters
+    def is_passport_valid(self):  # valid as in is the passport number 9 numbers long, no letters
         if (len(str(self.passport_num)) == 9) and (isinstance(self.passport_num, int) == True):
             return True
         else:
             return False
-        
 
 
 class FlightTrip:
@@ -38,7 +42,9 @@ class FlightTrip:
 
     def fetch_passenger_list(self):
         with open(os.path.join(flight_trip_path + self.destination + ".txt"), 'r') as flight_list:
-            return(flight_list) # Duplication detection ?? ASK
+            return (flight_list)  # Duplication detection
+
+
 
     # check if plane is valid - has seating available etc.
     def check_plane(self):
@@ -47,7 +53,7 @@ class FlightTrip:
             for line in flight_list:
                 if line != "\n":
                     line_count += 1
-        
+
         if self.plane.capacity >= line_count:
             print("The assigned plane is valid")
             return True
@@ -55,21 +61,21 @@ class FlightTrip:
             print("Please assign a new plane")
             return False
 
-    def add_Passenger(self, passenger):     # Add destinations to list for each passenger?? ASK (passenger1 = [des1, des2])
+    # check if plane is valid - has seating available etc.
+
+    def add_Passenger(self, passenger):  # Add destinations to list for each passenger?? ASK (passenger1 = [des1, des2])
         with open(os.path.join(flight_trip_path + "\\" + self.destination + ".txt"), 'a+') as flight_list:
             flight_list.write(passenger.name + ", " + str(passenger.passport_num) + "\n")
 
 
-
 class Plane:
-    def __init__(self, capacity, range):
+    def __init__(self, capacity):
         self.capacity = capacity
-        self.range = range
 
     def check_capacity(self):
         return self.capacity
 
-    def check_range(self):
-        return self.range
+
+
 
 
