@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "master.html" %}
 
-</body>
-</html>
+{% block title %}
+Remove Passenger from Flight
+{% endblock %}
+
+{% block body %}
+<form method="post" action="flighttrip">
+  <label for="name">name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="passportnum">Passport Number:</label><br>
+  <input type="text" id="passportnum" name="passportnum">
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}

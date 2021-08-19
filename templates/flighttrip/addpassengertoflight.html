@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "master.html" %}
 
-</body>
-</html>
+{% block title %}
+Add Passenger to Flight
+{% endblock %}
+
+{% block body %}
+<form method="post" action="/flighttrip/addpassengertoflight">
+  <label for="flighttrip">flighttrip:</label><br>
+  <input type="text" id="flighttrip" name="flighttrip"><br>
+  <label for="passengerid">passengerid:</label><br>
+  <input type="text" id="passengerid" name="passengerid">
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
