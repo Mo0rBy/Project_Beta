@@ -1,2 +1,4 @@
 pytest
 pytest-cov
+
+Flask~=2.0.1
