@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+<html>
+    <head>
+        <title> Airport Planner {{title}}</title>
+    </head>
+    <body>
+        <h1>Airport Planner {{title}}</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="passenger">Passengers</a></li>
+                <li><a href="flighttrip">Flight Trips</a></li>
+                <li><a href="plane">Planes</a></li>
+            </ul>
+            {% block body %}
+            {% endblock body%}
+    </body>
 </html>
