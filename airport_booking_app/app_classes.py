@@ -25,7 +25,7 @@ class Passenger:
         return self.name, self.passport_num
 
     def is_passport_valid(self):  # valid as in is the passport number 9 numbers long, no letters
-        if (len(str(self.passport_num)) == 9) and (isinstance(self.passport_num, int) == True):
+        if len(self.passport_num) == 9:  # and (isinstance(self.passport_num, int) is True):
             return True
         else:
             return False
@@ -42,9 +42,7 @@ class FlightTrip:
 
     def fetch_passenger_list(self):
         with open(os.path.join(flight_trip_path + self.destination + ".txt"), 'r') as flight_list:
-            return (flight_list)  # Duplication detection
-
-
+            return flight_list  # Duplication detection
 
     # check if plane is valid - has seating available etc.
     def check_plane(self):
@@ -74,8 +72,3 @@ class Plane:
 
     def check_capacity(self):
         return self.capacity
-
-
-
-
-
