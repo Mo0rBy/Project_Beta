@@ -5,9 +5,11 @@ Assign Plane
 {% endblock %}
 
 {% block body %}
-<form method="post" action="flighttrip">
-  <label for="plane">plane:</label><br>
-  <input type="text" id="plane" name="plane"><br>
+<form method="post" action="/flighttrip/assignplane">
+  <label for="planeid">Plane ID:</label><br>
+  <input type="text" id="planeid" name="planeid"><br>
+  <label for="flighttrip">Flight Trip:</label><br>
+  <input type="text" id="flighttrip" name="flighttrip"><br>
   <input type="submit" value="Submit">
 </form>
 {% endblock %}
