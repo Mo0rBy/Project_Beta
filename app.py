@@ -40,6 +40,7 @@ def removepassenger():
 def flighttrip():
     return render_template('flighttrip/flighttrip.html')
 
+
 @app.route('/flighttrip/add', methods=['POST', 'GET'])
 def addflighttrip():
     if request.method == 'GET':
@@ -51,6 +52,7 @@ def addflighttrip():
         with open("destinations_register.txt", "a+") as register:
             register.write(destination + "\n")
         return f'Flight trip {globals()[destination].destination} has been created'
+
 
 @app.route('/flighttrip/addpassengertoflight', methods=['POST', 'GET'])
 def addpassengertoflight():
@@ -68,25 +70,31 @@ def addpassengertoflight():
 def assignplane():
     return render_template('flighttrip/assignplane.html')
 
+
 @app.route('/flighttrip/removeflighttrip', methods=['POST', 'GET'])
 def removeflighttrip():
     return render_template('flighttrip/removeflighttrip.html')
+
 
 @app.route('/flighttrip/removepassenger', methods=['POST', 'GET'])
 def removepassengerfromflight():
     return render_template('flighttrip/removepassengerfromflight.html')
 
+
 @app.route('/plane')
 def plane():
     return render_template('plane/plane.html')
+
 
 @app.route('/plane/add')
 def addplane():
     return render_template('plane/addplane.html')
 
+
 @app.route('/plane/remove')
 def removeplane():
     return render_template('plane/removeplane.html')
+    
 
 if __name__ == '__main__':
     app.debug = True
