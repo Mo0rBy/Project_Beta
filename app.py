@@ -64,12 +64,29 @@ def addpassengertoflight():
 
     #AttributeError: 'str' object has no  attribute 'name'
 
+@app.route('/flighttrip/assignplane', methods=['POST', 'GET'])
+def assignplane():
+    return render_template('flighttrip/assignplane.html')
+
+@app.route('/flighttrip/removeflighttrip', methods=['POST', 'GET'])
+def removeflighttrip():
+    return render_template('flighttrip/removeflighttrip.html')
+
+@app.route('/flighttrip/removepassenger', methods=['POST', 'GET'])
+def removepassengerfromflight():
+    return render_template('flighttrip/removepassengerfromflight.html')
+
 @app.route('/plane')
 def plane():
     return render_template('plane/plane.html')
 
+@app.route('/plane/add')
+def addplane():
+    return render_template('plane/addplane.html')
 
-
+@app.route('/plane/remove')
+def removeplane():
+    return render_template('plane/removeplane.html')
 
 if __name__ == '__main__':
     app.debug = True
