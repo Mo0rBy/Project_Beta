@@ -59,8 +59,8 @@ def addpassengertoflight():
     elif request.method == 'POST':
         flighttrip = request.form["flighttrip"]
         passengerid = request.form["passengerid"]
-        globals()[flighttrip].add_Passenger(passengerid)
-        return f'Passenger {passengerid} has been added to flight {flighttrip} '
+        globals()[flighttrip].add_Passenger(globals()[passengerid])
+        return f'Passenger {passengerid} has been added to flight {flighttrip}'
 
     #AttributeError: 'str' object has no  attribute 'name'
 
