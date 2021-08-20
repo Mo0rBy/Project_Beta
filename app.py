@@ -31,10 +31,10 @@ def addpassenger():
             globals()[string_pas_num] = Passenger(name, passport_num)
             with open("passenger_register.txt", "a+") as register:
                 register.write(string_pas_num + ", " + name + ", " + passport_num + "\n")
-            return f'Passenger {globals()[string_pas_num].name} has been created with user name {string_pas_num}'
+            return f"Passenger {globals()[string_pas_num].name} has been created with user name {string_pas_num}. <p><a href='/passenger/add'>Back</a></p>"
         # else return error message
         else:
-            return f"Invalid passport number {passport_num}. Please use 9 integers."
+            return f"Invalid passport number {passport_num}. Please use 9 integers. <p><a href='/passenger/add'>Back</a></p>"
 
 
 @app.route('/passenger/remove')
@@ -57,7 +57,7 @@ def addflighttrip():
         globals()[destination] = FlightTrip(destination)
         with open("destinations_register.txt", "a+") as register:
             register.write(destination + "\n")
-        return f'Flight trip {globals()[destination].destination} has been created'
+        return f"Flight trip {globals()[destination].destination} has been created. <p><a href='/flighttrip/add'>Back</a></p>"
 
 
 @app.route('/flighttrip/addpassengertoflight', methods=['POST', 'GET'])
@@ -68,7 +68,7 @@ def addpassengertoflight():
         flighttrip = request.form["flighttrip"]
         passengerid = request.form["passengerid"]
         globals()[flighttrip].add_Passenger(globals()[passengerid])
-        return f'Passenger {passengerid} has been added to flight {flighttrip}'
+        return f"Passenger {passengerid} has been added to flight {flighttrip}. <p><a href='/flighttrip/addpassengertoflight'>Back</a></p>"
 
 
 @app.route('/flighttrip/assignplane', methods=['POST', 'GET'])
@@ -80,7 +80,7 @@ def assignplane():
         flighttrip = request.form["flighttrip"]
 
         globals()[flighttrip].assign_plane(globals()[planeid])
-        return f'Plane {planeid} has been added to flight {flighttrip}'
+        return f"Plane {planeid} has been added to flight {flighttrip}. <p><a href='/flighttrip/assignplane'>Back</a></p>"
 
 
 @app.route('/flighttrip/removeflighttrip', methods=['POST', 'GET'])
@@ -101,7 +101,7 @@ def generatelist():
         flighttrip = request.form["flighttrip"]
         with open("airport_booking_app\\flight_trips\\" + flighttrip + '.txt') as file:
             content = file.read()
-        return f"{content}"
+        return f"{content}<p><a href='/flighttrip/generatelist'>Back</a></p>"
 
 
 @app.route('/plane')
@@ -114,13 +114,13 @@ def addplane():
     if request.method == 'GET':
         return render_template('plane/addplane.html')
     elif request.method == 'POST':
-        name = request.form["name"]
+        name = request.form["planeid"]
         capacity = request.form["capacity"]
 
         globals()[name] = Plane(capacity)
         with open("plane_register.txt", "a+") as register:
             register.write(name + ', ' + capacity + "\n")
-        return f'Plane {name} has been created'
+        return f"Plane {name} has been created. <p><a href='/plane/add'>Back</a></p>"
 
 
 @app.route('/plane/remove')
