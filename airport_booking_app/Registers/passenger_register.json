@@ -1,0 +1,24 @@
+{
+  "passenger_register": [
+    {
+      "name": "Will",
+      "passport_number": "123456789"
+    },
+    {
+      "name": "Bob",
+      "passport_number": "123456789"
+    },
+    {
+      "name": "Phil",
+      "passport_number": "123456789"
+    },
+    {
+      "name": "Bob",
+      "passport_number": "123456789"
+    },
+    {
+      "name": "Will",
+      "passport_number": "222222222"
+    }
+  ]
+}
