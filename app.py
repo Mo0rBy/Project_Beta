@@ -40,9 +40,12 @@ def addpassenger():
             return f"Invalid passport number {passport_num}. Please use 9 integers. <p><a href='/passenger/add'>Back</a></p>"
 
 
-@app.route('/passenger/remove')
+@app.route('/passenger/remove', methods=['POST', 'GET'])
 def removepassenger():
-    return render_template('passenger/removepassenger.html')
+    if request.method == 'GET':
+        return render_template('passenger/removepassenger.html')
+    elif request.method == 'POST':
+        pass
 
 
 @app.route('/flighttrip')
@@ -91,9 +94,29 @@ def removeflighttrip():
     return render_template('flighttrip/removeflighttrip.html')
 
 
-@app.route('/flighttrip/removepassenger', methods=['POST', 'GET'])
+@app.route('/flighttrip/removepassengerfromflight', methods=['POST', 'GET'])
 def removepassengerfromflight():
-    return render_template('flighttrip/removepassengerfromflight.html')
+    if request.method == 'GET':
+        return render_template('flighttrip/removepassengerfromflight.html')
+    elif request.method == 'POST':
+        passenger_id = request.form["passengerid"]
+        flighttrip = request.form["flighttrip"]
+        pass_num = passenger_id[1:]
+        with open("airport_booking_app\\Registers\\flight_trip_register.json", "r+") as file:
+            content = json.load(file)
+            register = content["flight_trip_register"][flighttrip]
+            index = 0
+            for user in register:
+                if pass_num in user["passport_number"]:
+                    del (register[index])
+                    break
+                index += 1            
+            else:
+                return f"{passenger_id} could not be found."
+        with open("airport_booking_app\\Registers\\flight_trip_register.json", "w") as file:
+            file.seek(0)
+            json.dump(content, file, indent=2)
+            return f"{passenger_id} has been removed from the flight: {flighttrip}" 
 
 
 @app.route('/flighttrip/generatelist', methods=['POST', 'GET'])
