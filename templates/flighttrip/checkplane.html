@@ -1,0 +1,13 @@
+{% extends "master.html" %}
+
+{% block title %}
+Check Plane
+{% endblock %}
+
+{% block body %}
+<form method="post" action="/flighttrip/checkplane">
+  <label for="flighttrip">Flight Trip:</label><br>
+  <input type="text" id="flighttrip" name="flighttrip"><br>
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}

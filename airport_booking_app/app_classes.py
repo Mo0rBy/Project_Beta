@@ -48,10 +48,8 @@ class FlightTrip:
             flight_trip_list = json.load(file)
             passenger_count = len(flight_trip_list["flight_trip_register"][self.destination])
         if self.plane.capacity >= passenger_count:
-            print("The assigned plane is valid")
             return True
         else:
-            print("Please assign a new plane")
             return False
 
     # Add a passenger to a flights json file
@@ -74,7 +72,7 @@ class FlightTrip:
 class Plane:
     def __init__(self, name, capacity):
         self.name = name
-        self.capacity = capacity
+        self.capacity = int(capacity)
 
     def check_capacity(self):
         return self.capacity
