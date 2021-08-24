@@ -129,6 +129,19 @@ def addplane():
 @app.route('/plane/remove')
 def removeplane():
     return render_template('plane/removeplane.html')
+
+
+@app.route('/flighttrip/checkplane', methods=['POST', 'GET'])
+def check_plane():
+    if request.method == 'GET':
+        return render_template('flighttrip/checkplane.html')
+    elif request.method == 'POST':
+        flighttrip = request.form["flighttrip"]
+        destination = flight_trip_dict[flighttrip]
+        if destination.check_plane():
+            return f"Plane assigned to {flighttrip} is valid"
+        else:
+            return f"Plane assigned to {flighttrip} is not valid"
     
 
 
