@@ -8,10 +8,6 @@ planes_dict = {}
 
 app = Flask(__name__)
 
-# # Change paths for your directories!!
-# parent_dir = os.path.dirname(__file__)
-# airport_booking_app_dir = os.path.dirname(parent_dir)
-
 
 @app.route('/')
 def index():
@@ -75,7 +71,7 @@ def addpassengertoflight():
         flighttrip = request.form["flighttrip"]
         passenger_id = request.form["passenger_id"] # change HTML
         flight_trip_dict[flighttrip].add_Passenger(passenger_dict[passenger_id])
-        return f"Added {passenger_id} to {flighttrip}. <p><a href='/flighttrip/'>Back</a></p>"
+        return f"Added {passenger_id} to {flighttrip}. <p><a href='/flighttrip'>Back</a></p>"
 
 
 @app.route('/flighttrip/assignplane', methods=['POST', 'GET'])
@@ -106,9 +102,10 @@ def generatelist():
         return render_template('flighttrip/generateflightattendeeslist.html')
     elif request.method == 'POST':
         flighttrip = request.form["flighttrip"]
-        with open("airport_booking_app\\flight_trips\\" + flighttrip + '.txt') as file:
-            content = file.read()
-        return f"{content}<p><a href='/flighttrip/generatelist'>Back</a></p>"
+        with open("airport_booking_app\\Registers\\flight_trip_register.json") as file:
+            content = json.load(file)
+            passenger_list = content["flight_trip_register"][flighttrip]
+        return f"{passenger_list}<p><a href='/flighttrip/generatelist'>Back</a></p>"
 
 
 @app.route('/plane')
