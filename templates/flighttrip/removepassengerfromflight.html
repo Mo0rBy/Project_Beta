@@ -5,11 +5,11 @@ Remove Passenger from Flight
 {% endblock %}
 
 {% block body %}
-<form method="post" action="flighttrip">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name"><br>
-  <label for="passportnum">Passport Number:</label><br>
-  <input type="text" id="passportnum" name="passportnum">
+<form method="post" action="/flighttrip/removepassengerfromflight">
+  <label for="passengerid">Passenger ID:</label><br>
+  <input type="text" id="passengerid" name="passengerid"><br>
+  <label for="flighttrip">Flight Trip:</label><br>
+  <input type="text" id="flighttrip" name="flighttrip">
   <input type="submit" value="Submit">
 </form>
 {% endblock %}
