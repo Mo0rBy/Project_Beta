@@ -1,14 +1,25 @@
 {
   "flight_trip_register": {
-    "Leeds": [],
-    "Devon": [],
-    "Nottingham": [],
-    "Alabama": [],
-    "Amsterdam": [
+    "France": [
       {
-        "name": "Will",
+        "name": "zeeshan",
+        "passport_number": "123456789"
+      },
+      {
+        "name": "will",
         "passport_number": "987654321"
+      },
+      {
+        "name": "ioana",
+        "passport_number": "111111111"
       }
-    ]
+    ],
+    "Latvia": [
+      {
+        "name": "amy",
+        "passport_number": "222222222"
+      }
+    ],
+    "germany": []
   }
 }

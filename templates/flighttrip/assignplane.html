@@ -6,10 +6,21 @@ Assign Plane
 
 {% block body %}
 <form method="post" action="/flighttrip/assignplane">
+
   <label for="planeid">Plane ID:</label><br>
-  <input type="text" id="planeid" name="planeid"><br>
-  <label for="flighttrip">Flight Trip:</label><br>
-  <input type="text" id="flighttrip" name="flighttrip"><br>
+  <select name = "planeid" method = "get" action = "/flighttrip/assignplane">
+    {% for plane in plane_list %}
+    <option value = "{{plane}}" SELECTED>{{plane}}</option>
+    {% endfor %}
+    </select><br>
+
+    <label for="flighttrip">Flight Trip:</label><br>
+    <select name = "flighttrip" method = "get" action = "/flighttrip/assignplane">
+      {% for trip in flighttrip %}
+      <option value = "{{trip}}" SELECTED>{{trip}}</option>
+      {% endfor %}
+      </select><br>
+
   <input type="submit" value="Submit">
 </form>
 {% endblock %}

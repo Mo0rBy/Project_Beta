@@ -6,8 +6,24 @@ Passenger
 
 {% block body %}
 <a href="passenger/add">Add Passenger</a><br /><br />
-<a href="#">Remove Passenger</a><br /><br />
+<a href="passenger/remove">Remove Passenger</a><br /><br />
 <hr />
-<pre>ID          Name    Passport Number</pre>
-<pre>{{content}}</pre>
+<table>
+    <tr>
+      <th>Name
+      Passport Number</th>
+      </tr>
+      <table>
+      <!--  {% for key, value in content %}
+           <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+           </tr>
+        {% endfor %}
+        </table>-->
+        
+{% for passenger in content %}<tr>
+<td>{{passenger}}</td>
+</tr>{% endfor %}
+</table>
 {% endblock %}

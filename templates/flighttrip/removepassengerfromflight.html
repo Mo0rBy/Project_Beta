@@ -6,10 +6,20 @@ Remove Passenger from Flight
 
 {% block body %}
 <form method="post" action="/flighttrip/removepassengerfromflight">
-  <label for="passengerid">Passenger ID:</label><br>
-  <input type="text" id="passengerid" name="passengerid"><br>
-  <label for="flighttrip">Flight Trip:</label><br>
-  <input type="text" id="flighttrip" name="flighttrip">
+
+    <label for="flighttrip">Flight Trip:</label><br>
+    <select name = "flighttrip" method = "get" action = "/flighttrip/removepassengerfromflight">
+      {% for trip in flighttrip %}
+      <option value = "{{trip}}" SELECTED>{{trip}}</option>
+      {% endfor %}
+      </select><br>
+
+      <label for="passenger_id">Passenger ID:</label><br>
+      <select name = "passenger_id" method = "get" action = "/flighttrip/removepassengerfromflight">
+        {% for passenger in passengerlist %}
+        <option value = "{{passenger}}" SELECTED>{{passenger}}</option>
+        {% endfor %}
+        </select><br>
   <input type="submit" value="Submit">
 </form>
 {% endblock %}
