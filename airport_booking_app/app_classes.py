@@ -8,8 +8,6 @@ flight_trip_path = os.path.join(parent_dir + "\\flight_trips")
 
 class Passenger:
     def __init__(self, name, passport_num):
-        # self.name = name
-        # self.passport_num = passport_num
         self.user_info = {"name": name, "passport_number": passport_num}
 
 
@@ -33,22 +31,22 @@ class Passenger:
 class FlightTrip:
     def __init__(self, destination):
         self.destination = destination
-        self.passenger_dict = {}
         self.plane = None
 
     def assign_plane(self, plane):
         self.plane = plane
 
     def fetch_passenger_list(self):
-        with open(os.path.join(flight_trip_path + "\\" + self.destination + ".json"), 'r') as flight_list:
-            return json.load(flight_list)
+        with open(os.path.join(parent_dir + "\\Registers\\flight_trip_register.json"), 'r') as file:
+            content  = json.load(file)
+            register = content["flight_trip_register"][self.destination]
+            return json.load(register)
 
     # check if plane is valid - has seating available etc.
     def check_plane(self):
-        with open(os.path.join(flight_trip_path + "\\" + self.destination + ".json"), 'r') as flight_list:
-            passenger_list = json.load(flight_list)
-            passenger_count = len(passenger_list["passenger_register"])
-
+        with open(os.path.join(parent_dir + "\\Registers\\flight_trip_register.json"), 'r') as file:
+            flight_trip_list = json.load(file)
+            passenger_count = len(flight_trip_list["flight_trip_register"][self.destination])
         if self.plane.capacity >= passenger_count:
             print("The assigned plane is valid")
             return True

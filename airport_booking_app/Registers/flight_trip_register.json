@@ -13,6 +13,12 @@
       }
     ],
     "Manchester": [],
-    "Glasgow": []
+    "Glasgow": [],
+    "Norway": [
+      {
+        "name": "Will",
+        "passport_number": "123456789"
+      }
+    ]
   }
 }
