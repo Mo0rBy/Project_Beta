@@ -7,7 +7,11 @@ Assign Plane
 {% block body %}
 <form method="post" action="/flighttrip/generatelist">
   <label for="flighttrip">Flight Trip:</label><br>
-  <input type="text" id="flighttrip" name="flighttrip"><br>
+  <select name = "flighttrip" method = "get" action = "/flighttrip/generatelist">
+    {% for trip in flighttrip %}
+    <option value = "{{trip}}" SELECTED>{{trip}}</option>
+    {% endfor %}
+    </select><br>
   <input type="submit" value="Submit">
 </form>
 {% endblock %}

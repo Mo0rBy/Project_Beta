@@ -1,64 +1,28 @@
 {
   "passenger_register": [
     {
-      "name": "Will",
-      "passport_number": "123456789"
+      "name": "kieron",
+      "passport_number": "987654321"
     },
     {
-      "name": "Zeeshan",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Ioanna",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Ioanna",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Amy",
-      "passport_number": "123456789"
+      "name": "amy",
+      "passport_number": "987654321"
     },
     {
       "name": "will",
       "passport_number": "987654321"
     },
     {
-      "name": "Kieron",
+      "name": "zeeshan",
       "passport_number": "123456789"
     },
     {
-      "name": "Amy",
-      "passport_number": "123456789"
+      "name": "ioana",
+      "passport_number": "111111111"
     },
     {
-      "name": "Kieron",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Will",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "will",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Will",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Amy",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Ioana",
-      "passport_number": "123456789"
-    },
-    {
-      "name": "Will",
-      "passport_number": "987654321"
+      "name": "kieron",
+      "passport_number": "555555555"
     }
   ]
 }

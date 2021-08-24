@@ -5,11 +5,21 @@ Add Passenger to Flight
 {% endblock %}
 
 {% block body %}
+
 <form method="post" action="/flighttrip/addpassengertoflight">
   <label for="flighttrip">Flight Trip:</label><br>
-  <input type="text" id="flighttrip" name="flighttrip"><br>
-  <label for="passenger_id">Passenger ID:</label><br>
-  <input type="text" id="passenger_id" name="passenger_id">
+  <select name = "flighttrip" method = "get" action = "/flighttrip/addpassengertoflight">
+    {% for trip in flighttrip %}
+    <option value = "{{trip}}" SELECTED>{{trip}}</option>
+    {% endfor %}
+    </select><br>
+
+    <label for="passenger_id">Passenger ID:</label><br>
+    <select name = "passenger_id" method = "get" action = "/flighttrip/addpassengertoflight">
+      {% for passenger in passengerlist %}
+      <option value = "{{passenger}}" SELECTED>{{passenger}}</option>
+      {% endfor %}
+      </select><br>
   <input type="submit" value="Submit">
 </form>
 {% endblock %}

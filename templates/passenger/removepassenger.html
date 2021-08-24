@@ -5,11 +5,15 @@ Remove Passenger
 {% endblock %}
 
 {% block body %}
-<form method="post" action="passenger">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name"><br>
-  <label for="passportnum">Passport Number:</label><br>
-  <input type="text" id="passportnum" name="passportnum">
+<form method="post" action="/passenger/remove">
+
+  <label for="passengerid">Passenger ID:</label><br>
+  <select name = "passengerid" method = "get" action = "/passenger/remove">
+    {% for passenger in passengerlist %}
+    <option value = "{{passenger}}" SELECTED>{{passenger}}</option>
+    {% endfor %}
+    </select><br>
+
   <input type="submit" value="Submit">  
 </form>
 {% endblock %}
