@@ -40,9 +40,12 @@ def addpassenger():
             return f"Invalid passport number {passport_num}. Please use 9 integers. <p><a href='/passenger/add'>Back</a></p>"
 
 
-@app.route('/passenger/remove')
+@app.route('/passenger/remove', methods=['POST', 'GET'])
 def removepassenger():
-    return render_template('passenger/removepassenger.html')
+    if request.method == 'GET':
+        return render_template('passenger/removepassenger.html')
+    elif request.method == 'POST':
+        pass
 
 
 @app.route('/flighttrip')
