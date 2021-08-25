@@ -1,4 +1,4 @@
 pytest
 pytest-cov
-
+json
 Flask~=2.0.1
