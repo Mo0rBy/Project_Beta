@@ -1,10 +1,11 @@
 {% extends "master.html" %}
 
 {% block title %}
-Assign Plane
+Generate Flight Attendees List
 {% endblock %}
 
 {% block body %}
+<h2>Generate The Flight Attendees List For A Flight Trip</h2>
 <form method="post" action="/flighttrip/generatelist">
   <label for="flighttrip">Flight Trip:</label><br>
   <select name = "flighttrip" method = "get" action = "/flighttrip/generatelist">

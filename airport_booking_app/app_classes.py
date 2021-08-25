@@ -1,7 +1,7 @@
 import os
 import json
 
-# Change paths for your directories!!
+
 parent_dir = os.path.dirname(__file__)
 flight_trip_path = os.path.join(parent_dir + "\\flight_trips")
 
@@ -83,22 +83,3 @@ class Plane:
             plane_register_data["plane_register"].append({self.name: self.capacity})
             file.seek(0)
             json.dump(plane_register_data, file, indent=2)
-
-
-###################
-
-if __name__ == "__main__":
-    pas1 = Passenger("Will", 123456789)
-    print(pas1.get_info())
-    pas2 = Passenger("Amy", 987654321)
-
-    flight_trip = FlightTrip("Miami")
-    flight_trip.add_Passenger(pas1)
-    flight_trip.add_Passenger(pas2)
-
-    plane1 = Plane(10)
-    flight_trip.assign_plane(plane1)
-
-    print(flight_trip.fetch_passenger_list())
-    var = flight_trip.check_plane()
-    print(var, type(var))

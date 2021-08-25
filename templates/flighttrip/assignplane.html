@@ -5,8 +5,8 @@ Assign Plane
 {% endblock %}
 
 {% block body %}
+<h2>Assign A Plane To A Flight</h2>
 <form method="post" action="/flighttrip/assignplane">
-
   <label for="planeid">Plane ID:</label><br>
   <select name = "planeid" method = "get" action = "/flighttrip/assignplane">
     {% for plane in plane_list %}

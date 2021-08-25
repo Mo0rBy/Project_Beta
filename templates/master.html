@@ -32,6 +32,15 @@
           background-color: #6495ed;
           color: #011;
         }
+
+        a {
+        text-decoration: none;
+        color: #000;
+        }
+
+        a:hover {
+        text-decoration: underline;
+        }
         </style>
     </head>
     <body>
@@ -42,6 +51,7 @@
             <a href="/flighttrip">Flight Trips</a>
             <a href="/plane">Planes</a>
         </div>
+        <br />
         {% block body %}
         {% endblock body%}
     </body>
