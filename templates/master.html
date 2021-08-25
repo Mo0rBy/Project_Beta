@@ -1,20 +1,48 @@
 <html>
     <head>
         <title> Airport Planner {{title}}</title>
+        <style>
+        body {
+          margin: 10px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+          overflow: hidden;
+          background-color: #87ceeb;
+          border-radius: 10px;
+        }
+
+        .topnav a {
+          float: left;
+          color: #000;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          font-weight: bold;
+        }
+
+        .topnav a:hover {
+          background-color: #ccccff;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #6495ed;
+          color: #011;
+        }
+        </style>
     </head>
     <body>
         <h1>Welcome to Project Beta Airlines  {{title}}</h1>
-            <hr />
-            <ul style="list-style-type: none; margin: 0; padding: 0; background-color: blue;">
-                <li style="float: left;"><a href="/" style="padding: 10px; text-decoration: none; color: black; text-align: center;">Home</a></li>
-                <li style="float: left;"><a href="/passenger" style="padding: 10px; text-decoration: none; color: black; text-align: center;">Passengers</a></li>
-                <li style="float: left;"><a href="/flighttrip" style="padding: 10px; text-decoration: none; color: black; text-align: center;">Flight Trips</a></li>
-                <li style="float: left;"><a href="/plane" style="padding: 10px; text-decoration: none; color: black; text-align: center;">Planes</a></li>
-            </ul>
-            <br />
-            <hr />
-            <br />
-            {% block body %}
-            {% endblock body%}
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/passenger">Passengers</a>
+            <a href="/flighttrip">Flight Trips</a>
+            <a href="/plane">Planes</a>
+        </div>
+        {% block body %}
+        {% endblock body%}
     </body>
 </html>
