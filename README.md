@@ -20,7 +20,7 @@ Follow Steps in Order:
 
 1. Navigate to Passenger home page
     * Click Add Passenger
-    * Input the name and passport number for the passenger
+    * Input the name and passport number for the passenger - passport number should be 9 digits long
     * Click Submit
     
 2. Navigate to Flight Trip homepage.
@@ -53,7 +53,7 @@ Follow Steps in Order:
     * Navigate to the Passenger homepage
     * Select the passenger id to be removed from the dropdown
     * Click Submit
-    * 
+    
 2. Remove Flight Trip
     * Navigate to the Flight Trip homepage
     * Select from the dropdown the Destination to be removed
