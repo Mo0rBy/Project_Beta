@@ -16,8 +16,8 @@ python app.py
 ```
 ## Using the Booking App
 1. Navigate to Passenger home page
-i. Click Add Passenger
-ii. Input the name and passport number for the passenger
-iii. Click Submit
+ i. Click Add Passenger
+ ii. Input the name and passport number for the passenger
+ iii. Click Submit
 2. 
 
