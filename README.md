@@ -48,3 +48,25 @@ Follow Steps in Order:
     * Click Submit
 
 ## Removing Instances From Booking App
+
+1. Removing Passenger from Passenger List
+    * Navigate to the Passenger homepage
+    * Select the passenger id to be removed from the dropdown
+    * Click Submit
+    * 
+2. Remove Flight Trip
+    * Navigate to the Flight Trip homepage
+    * Select from the dropdown the Destination to be removed
+    * Click Submit
+    
+3. Remove Passenger from Flight
+    * Navigate to the Flight Trip homepage
+    * Select the destination from the dropdown
+    * Select the passengers id from the second dropdown
+    * Click Submit
+    
+4. Remove Plane
+    * Navigate to Plane homepage
+    * Select from the dropdown the plane to be removed
+    * Click Submit
+    
