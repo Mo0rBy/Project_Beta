@@ -15,7 +15,9 @@ pip install -r requirements.txt
 python app.py
 ```
 ## Using the Booking App
-: *
+
+Follow Steps in Order:
+
 1. Navigate to Passenger home page
     * Click Add Passenger
     * Input the name and passport number for the passenger
