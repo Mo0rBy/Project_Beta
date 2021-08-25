@@ -15,13 +15,12 @@ pip install -r requirements.txt
 python app.py
 ```
 ## Using the Booking App
-/*:
+: *
 1. Navigate to Passenger home page
-    i. Click Add Passenger
-   ii. Input the name and passport number for the passenger
-  iii. Click Submit
+    * Click Add Passenger
+    * Input the name and passport number for the passenger
+    * Click Submit
 2. Navigate to Flight Trip homepage.
-    i. Click Add Flight Trip
-   ii. 
+    * Click Add Flight Trip
+    * 
 
-*/
